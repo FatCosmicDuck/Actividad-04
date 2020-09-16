@@ -9,6 +9,7 @@ void capturarEnteros(){
     {
         scanf("%i", &enteros[i]);
     }
+    printf("Impresion de numeros\n");
     for (size_t i = 0; i < 5; i++)
     {
         printf("%i\n", enteros[i]);
@@ -21,8 +22,18 @@ void capturarEnteros(){
     printf("Promedio: %f\n", suma/5.0);
 }
 
+void mostrar(int n, char cadena []){
+    for (size_t i = 0; i < n; i++)
+    {
+        printf("%s", cadena);
+    }
+    
+}
+
 int main (){
     char op;
+    char cadena[20];
+    int n;
 
     do{
         printf("1-. Capturar enteros\n");
@@ -40,6 +51,12 @@ int main (){
             break;
         case '2':
             printf("***Mostrar cadena n veces***\n");
+            printf("Escribe una cadena de 20 caracteres: ");
+            fflush(stdin);
+            fgets(cadena, sizeof(cadena), stdin);
+            printf("n: ");
+            scanf("%i", &n);
+            mostrar(n, cadena);
             break;
         case '3':
             printf("***Agregar personajes***\n");
